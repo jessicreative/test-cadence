@@ -1,0 +1,47 @@
+{
+  "emulators": {
+    "default": {
+      "port": 3569,
+      "serviceAccount": "emulator-account"
+    }
+  },
+  "contracts": {
+    "contract1": "./cadence/contracts/contract1.cdc",
+    "nft1": "./cadence/contracts/nft1.cdc",
+    "NonFungibleToken": {
+      "source": "./cadence/contracts/NonFungibleToken.cdc",
+      "aliases": {
+        "testnet": "0x631e88ae7f1d7c20"
+      }
+    }
+  },
+  "networks": {
+    "emulator": {
+      "host": "127.0.0.1:3569",
+      "chain": "flow-emulator"
+    },
+    "testnet": {
+      "host": "access.testnet.nodes.onflow.org:9000",
+      "chain": "flow-testnet"
+    }
+  },
+  "accounts": {
+    "emulator-account": {
+      "address": "f8d6e0586b0a20c7",
+      "keys": "c0c316243ecf688e85dc635840a69097221be29804b7e46b88cbd248beca9f52",
+      "chain": "flow-emulator"
+	 },
+    "testnet-account": {
+      "address": "${FLOW_ADDRESS}",
+      "keys": "${FLOW_PRIVATE_KEY}"
+    }
+  },
+  "deployments": {
+    "testnet": {
+      "testnet-account": ["contract1", "nft1"]
+    },
+    "emulator": {
+      "emulator-account": ["contract1", "nft1", "NonFungibleToken"]
+    }
+  }
+}
