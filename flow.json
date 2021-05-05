@@ -20,6 +20,10 @@
       "host": "127.0.0.1:3569",
       "chain": "flow-emulator"
     },
+    "mainnet": {
+      "host": "access.mainnet.nodes.onflow.org:9000",
+      "chain": "flow-mainnet"
+    },
     "testnet": {
       "host": "access.testnet.nodes.onflow.org:9000",
       "chain": "flow-testnet"
@@ -38,7 +42,7 @@
   },
   "deployments": {
     "testnet": {
-      "testnet-account": ["contract1", "nft1"]
+      "testnet-account": ["contract1", "nft1", "NonFungibleToken"]
     },
     "emulator": {
       "emulator-account": ["contract1", "nft1", "NonFungibleToken"]
