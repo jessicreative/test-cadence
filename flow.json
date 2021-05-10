@@ -6,8 +6,8 @@
     }
   },
   "contracts": {
-    "contract1": "./cadence/contracts/contract1.cdc",
-    "nft1": "./cadence/contracts/nft1.cdc",
+    "Contract1": "./cadence/contracts/Contract1.cdc",
+    "Cards": "./cadence/contracts/Cards.cdc",
     "NonFungibleToken": {
       "source": "./cadence/contracts/NonFungibleToken.cdc",
       "aliases": {
@@ -34,7 +34,7 @@
       "address": "f8d6e0586b0a20c7",
       "keys": "c0c316243ecf688e85dc635840a69097221be29804b7e46b88cbd248beca9f52",
       "chain": "flow-emulator"
-	 },
+    },
     "testnet-account": {
       "address": "${FLOW_ADDRESS}",
       "keys": "${FLOW_PRIVATE_KEY}"
@@ -42,10 +42,10 @@
   },
   "deployments": {
     "testnet": {
-      "testnet-account": ["contract1", "nft1", "NonFungibleToken"]
+      "testnet-account": ["Contract1", "Cards", "NonFungibleToken"]
     },
     "emulator": {
-      "emulator-account": ["contract1", "nft1", "NonFungibleToken"]
+      "emulator-account": ["Contract1", "Cards", "NonFungibleToken"]
     }
   }
 }

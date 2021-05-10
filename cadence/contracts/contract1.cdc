@@ -6,7 +6,7 @@
 //
 // Follow the "Hello, World!" tutorial to learn more: https://docs.onflow.org/docs/hello-world
 
-access(all) contract contract1 {
+access(all) contract Contract1 {
 
     // Declare a public field of type String.
     //

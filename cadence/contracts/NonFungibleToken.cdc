@@ -96,13 +96,13 @@ pub contract interface NonFungibleToken {
 
         // deposit takes an NFT as an argument and adds it to the Collection
         //
-		pub fun deposit(token: @NFT)
+		pub fun deposit(token: @NFT,metadata: {String : String})
     }
 
     // Interface that an account would commonly 
     // publish for their collection
     pub resource interface CollectionPublic {
-        pub fun deposit(token: @NFT)
+        pub fun deposit(token: @NFT,metadata: {String : String})
         pub fun getIDs(): [UInt64]
         pub fun borrowNFT(id: UInt64): &NFT
     }
@@ -120,7 +120,7 @@ pub contract interface NonFungibleToken {
 
         // deposit takes a NFT and adds it to the collections dictionary
         // and adds the ID to the id array
-        pub fun deposit(token: @NFT)
+        pub fun deposit(token: @NFT, metadata: {String : String})
 
         // getIDs returns an array of the IDs that are in the collection
         pub fun getIDs(): [UInt64]
@@ -132,6 +132,10 @@ pub contract interface NonFungibleToken {
                 self.ownedNFTs[id] != nil: "NFT does not exist in the collection!"
             }
         }
+
+        pub fun updateMetadata(id: UInt64, metadata: {String: String})
+
+        pub fun getMetadata(id: UInt64): {String : String} 
     }
 
     // createEmptyCollection creates an empty Collection
